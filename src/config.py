@@ -1,0 +1,8 @@
+BATCH_SIZE = 64
+EPOCHS = 100
+PRETRAINED_MODEL_NAME = 'bert-base-multilingual-uncased'
+MAX_LEN = 50
+MODEL_PATH = 'model/'
+TRAIN_RATIO = 0.8
+VALI_RATIO = 0.1
+TEST_RATIO = 0.1
