@@ -60,18 +60,3 @@ if __name__ == '__main__':
             best_loss = vali_loss
     end = time.time()
     print(f'Training time(s): {end - start}')
-
-    # Evaluation.
-    test_size = int(len(dataset) * config.TEST_RATIO)
-    testset = PatientDataset(dataset[-test_size:], tokenizer, label_set)
-    testloader = DataLoader(testset, batch_size=config.BATCH_SIZE)
-
-    # Evaluate.
-    start = time.time()
-    acc, f1, loss = run_epoch(testloader, model, device)
-    end = time.time()
-    print(f'F1 score: {f1}')
-    print(f'NER acc: {acc}')
-    print(f'Number of sentences: {len(testset)}')
-    print(f'Total time(s): {end - start}')
-    print(f'Time(s) per sentences: {(end - start) / len(testset)}')

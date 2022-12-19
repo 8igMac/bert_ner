@@ -13,7 +13,7 @@ class PatientDataset(Dataset):
         self.dataset = dataset
         self.tokenizer = tokenizer
         self.len = len(dataset)
-        self.label_map = {label: i for i, label in enumerate(label_set)}
+        self.label_map = {label: i for i, label in enumerate(sorted(label_set))}
         self.id2label = list(label_set)
         self.max_len = config.MAX_LEN
 
